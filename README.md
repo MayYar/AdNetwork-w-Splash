@@ -4,7 +4,7 @@
   (spanning multiple lines),
   
   ```
-  sudo docker pull scrapinghub/splash
+  docker pull scrapinghub/splash
   ```
 
 - A *paragraph* of text
