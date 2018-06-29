@@ -1,14 +1,12 @@
 # AdNetwork-w-Splash
 
-- A *paragraph* of text
-  (spanning multiple lines),
+- Pulling from scrapinghub/splash
   
   ```
   docker pull scrapinghub/splash
   ```
 
-- A *paragraph* of text
-  (spanning multiple lines),
+- Run docker and visit Splash on port 8050(http)
   
   ```
   docker run -p 8050:8050 scrapinghub/splash
