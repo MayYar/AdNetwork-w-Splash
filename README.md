@@ -11,12 +11,14 @@
   ```
   docker run -p 8050:8050 scrapinghub/splash
   ```
+  open browser an find ```localhost:8050``` then you can see below:
+  ![Alt text](https://imgur.com/bjIMv9C)
   
 ## Configuration
 
 - In  ```setting.py ```
 
-  To activate a downloader middleware component, add it to the ```DOWNLOADER_MIDDLEWARES``` and ```SPIDER_MIDDLEWARES``` setting
+  To activate a downloader middleware component, add it to the ```DOWNLOADER_MIDDLEWARES``` and setting
 
   ```
   DOWNLOADER_MIDDLEWARES = {
@@ -45,7 +47,33 @@
   ```
   HTTPERROR_ALLOWED_CODES = [400] (# error code)
   ```
-Links
------
+
+## Requirements
+- [scrapy](https://scrapy.org)
+- Install [scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash) using pip:
+```
+$ pip install scrapy-splash
+```
+- [bs4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) for pulling data out of HTML files
+
+## Usage
+- pass 2 argument (format: '%Y-%m-%d')
+- Spider: ClickForce_login, VMFive_login
+
+**Example**:
+```
+$ scrapy crawl AdNetwork -a start_time=2018-06-15 -a end_time=2018-06-20
+```
+- default (between 14 days)
+```
+$ scrapy crawl ClickForce_login
+```
+## Contact
+Feel free to [contact me](jyunyan.lu@gmail.com) if there's any problem.
+
+## Links
+
 
 - Reference from [scrapy-cookbook](http://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html)
+
+
