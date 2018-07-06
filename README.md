@@ -11,14 +11,17 @@
   ```
   docker run -p 8050:8050 scrapinghub/splash
   ```
-  open browser an find ```localhost:8050``` then you can see below:
-  ![Alt text](https://imgur.com/bjIMv9C)
+  Open browser an enter ```localhost:8050``` then you can see below:
+
+  ![](https://github.com/MayYar/AdNetwork-w-Splash/blob/master/pic.png?raw=true)
+  
+  You can put any URL in the editbox and click "Render me !" to see the result.
   
 ## Configuration
 
-- In  ```setting.py ```
+- In  ```settings.py ```
 
-  To activate a downloader middleware component, add it to the ```DOWNLOADER_MIDDLEWARES``` and setting
+  1. To activate a downloader middleware component, add it to the ```DOWNLOADER_MIDDLEWARES``` and setting
 
   ```
   DOWNLOADER_MIDDLEWARES = {
@@ -28,22 +31,22 @@
   'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
   }
   ```
-
+  2. Enable ```SplashDeduplicateArgsMiddleware``` by adding it to ```SPIDER_MIDDLEWARES```:
   ```
   SPIDER_MIDDLEWARES = {
       'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
   }
   ```
-  The class used to detect and filter duplicate requests. <br />
+  3. Set a custom ```DUPEFILTER_CLASS```:
   (need to set the ```dont_filter``` parameter to ```True``` on the specific Request)
   ```
   DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
   ```
-  change the HTTP cache storage backend with the ```HTTPCACHE_STORAGE``` setting
+  4. If you use Scrapy HTTP cache then a custom cache storage backend is required:
   ```
   HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
   ```
-  If you want to process response codes outside 200-300 (successful responses), you can specify which response codes the spider is able to handle using the ```HTTPERROR_ALLOWED_CODES``` setting.
+  5. If you want to process response codes outside 200-300 (successful responses), you can specify which response codes the spider is able to handle using the ```HTTPERROR_ALLOWED_CODES``` setting:
   ```
   HTTPERROR_ALLOWED_CODES = [400] (# error code)
   ```
@@ -62,9 +65,9 @@ $ pip install scrapy-splash
 
 **Example**:
 ```
-$ scrapy crawl AdNetwork -a start_time=2018-06-15 -a end_time=2018-06-20
+$ scrapy crawl ClickForce_login -a start_time=2018-06-15 -a end_time=2018-06-20
 ```
-- default (between 14 days)
+- default (last 14 days)
 ```
 $ scrapy crawl ClickForce_login
 ```
