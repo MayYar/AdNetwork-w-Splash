@@ -19,7 +19,7 @@
   
 ## Configuration
 
-- In  ```settings.py ```
+In  ```settings.py ```
 
   1. To activate a downloader middleware component, add it to the ```DOWNLOADER_MIDDLEWARES``` and setting
 
