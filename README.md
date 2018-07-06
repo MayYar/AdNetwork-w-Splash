@@ -15,7 +15,15 @@
 
   ![](https://github.com/MayYar/AdNetwork-w-Splash/blob/master/pic.png?raw=true)
   
-  You can put any URL in the editbox and click "Render me !" to see the result.
+  You can put any URL in the editbox and click "Render me!" to see the result.
+  
+## Requirements
+- [scrapy](https://scrapy.org)
+- Install [scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash) using pip:
+```
+$ pip install scrapy-splash
+```
+- [bs4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) for pulling data out of HTML files
   
 ## Configuration
 
@@ -50,14 +58,6 @@ In  ```settings.py ```
   ```
   HTTPERROR_ALLOWED_CODES = [400] (# error code)
   ```
-
-## Requirements
-- [scrapy](https://scrapy.org)
-- Install [scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash) using pip:
-```
-$ pip install scrapy-splash
-```
-- [bs4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) for pulling data out of HTML files
 
 ## Usage
 - pass 2 argument (format: '%Y-%m-%d')
