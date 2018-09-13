@@ -77,6 +77,6 @@ Feel free to [contact me](jyunyan.lu@gmail.com) if there's any problem.
 ## Links
 
 
-- Reference from [scrapy-cookbook](http://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html)
+Reference from [scrapy-cookbook](http://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html)
 
 
